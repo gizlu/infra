@@ -275,7 +275,8 @@ compilers:
               subdir: mipsel
               targets:
                 - 5.4.0
-                - 12.1.0
+                - name: 12.1.0
+                  arch_prefix: "{subdir}-multilib-linux-gnu"
             mips64:
               subdir: mips64
               targets:
@@ -286,7 +287,9 @@ compilers:
               subdir: mips64el
               targets:
                 - 5.4.0
-                - 12.1.0
+                - name: 12.1.0
+                  arch_prefix: "{subdir}-multilib-linux-uclibc"
+
           - type: tarballs
             subdir: mips
             check_exe: "bin/mips-mti-elf-g++ --version"
@@ -324,7 +327,6 @@ compilers:
           subdir: msp430
           targets:
             - 4.5.3
-            - 12.1.0
           older:
             type: tarballs
             strip: true
